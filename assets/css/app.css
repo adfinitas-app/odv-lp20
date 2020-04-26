@@ -6,7 +6,13 @@
 /*	color: #0f0 !important;*/
 /*	outline: solid #f00 1px !important;*/
 /*	}*/
-button, .btn-custom {
+body {
+	position: relative;
+}
+p, a, li, h1, h2, h3, h4, h5, h6, span, input {
+	font-family: 'PT Sans', serif;
+}
+button, .bt-custom, .btn-don {
 	-webkit-transition: all .1s ease-in-out;
 	-moz-transition: all .1s ease-in-out;
 	-o-transition: all .1s ease-in-out;
@@ -16,40 +22,802 @@ button, .btn-custom {
 	position: relative;
 	background-repeat: no-repeat;
 	background-size: cover;
+	min-height: 100vh;
 }
 .red {
 	color: #DF514D !important;
 }
-.btn-custom {
-	width: 100%;
-	height: 69px;
-	font-family: 'Barlow Condensed', serif;
-	display: block;
-	font-weight: 700;
+.btn-don {
+	background-color: #EBB33C;
+	height: 43px;
+	display: inline-block;
+	border-radius: 23px;
+	margin: 10px;
+	padding-top: 4px;
+}
+.btn-don:hover {
+	transform: scale(1.02);
+}
+.btn-don span {
+	padding: 10px 20px 10px 25px;
+	margin-top: 5px;
+	font-weight: bold;
+	color: white;
+	font-size: 17px;
 	text-transform: uppercase;
-	font-size: 22px;
-	padding-top: 17px;
+}
+.btn-don img {
+	max-width: 46px;
+	margin-top: -4px;
+	margin-right: -1px;
+}
+.bt-custom {
+	display: block;
+	font-weight: bold;
+	font-size: 17px;
+	text-transform: uppercase;
+	border-radius: 20px;
+	text-align: center;
+	max-width: 100%;
+	height: 43px;
+	padding-top: 7px;
+}
+.bt-custom.yellow {
+	color: white;
+	background-color: #EBB33C;
+}
+.bt-custom.transparent {
+	border: 1px solid rgba(255,255,255,0.3);
+	color: #CD8B00;
+	background-color: transparent;
+}
+
+#nav {
+	width: 100%;
+	background-color: transparent;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 99;
+
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#nav.fixed {
+	position: fixed;
+	background-color: rgba(0,0,0,0.5);
+}
+#nav.fixed .logo {
+	width: 100px;
+}
+
+#nav .logo {
+	-webkit-transition: width .1s ease-in-out;
+	-moz-transition: width .1s ease-in-out;
+	-o-transition: width .1s ease-in-out;
+	-ms-transition: width .1s ease-in-out;
+	float: left;
+}
+#nav .right {
+	float: right;
+	padding-top: 20px;
+}
+#nav.fixed .right {
+	padding-top: 0 !important;
+}
+#nav .right {
+	float: right;
+}
+
+#header {
+	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-header.jpg");
+	background-position: center;
+	padding-top: 55vh;
+}
+
+#header .warning {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	margin: 0;
+
+	font-weight: bold;
+	color: white;
+	font-size: 20px;
+}
+#header .warning img {
+	margin-right: 10px;
+	vertical-align: bottom;
+	max-width: 28px;
+
+}
+
+#header h1 {
+	width: 620px;
+	max-width: 100%;
+	margin: 0 auto;
+	font-size: 38px;
+	color: #EBB33C;
+	line-height: 1.4;
+	text-transform: uppercase;
+	border-left: 1px solid #707070;
+	padding-left: 30px;
+}
+#header h1 span {
+	color: white;
+}
+
+#crise {
+	padding-top: 45px;
+	padding-bottom: 45px;
+}
+#crise .left {
+	border-left: 1px solid rgba(112,112,122,0.3);
+	padding-left: 20px;
+}
+#crise h2 {
+	font-size: 38px;
+	color: black;
+	line-height: 1.2;
+	text-transform: uppercase;
+	margin: 0 0 15px;
+}
+#crise h2  span {
+	color: #004999;
+}
+
+#crise p {
+	font-size: 18px;
+	color: black;
+	line-height: 1.4;
+	margin: 0;
+}
+#crise .right p {
+	margin-top: 25px;
+}
+
+
+#seminariste {}
+#seminariste .left {
+	min-height: 699px;
+	background-color: #004999;
+}
+#seminariste .right img {
+	position: absolute;
+	left: 0;
+	top: calc(50% - 50px);
+}
+#seminariste .right {
+	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-quote.jpg");
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	min-height: 699px;
+}
+
+#seminariste .left {
+	padding-top: 100px;
+	padding-bottom: 40px;
+}
+#seminariste .left .border {
+	width: 350px;
+	max-width: 100%;
+	border-left: 1px solid rgba(255,255,255,0.3);
+	padding-left: 20px;
+	margin: 0 auto;
+}
+#seminariste .left h2 {
+	font-size: 38px;
+	color: white;
+	line-height: 1.2;
+	text-transform: uppercase;
+	margin: 0;
+}
+#seminariste .left h2 span {
+	color: #CD8B00;
+}
+#seminariste .left p.quote {
+	font-style: italic;
+	font-size: 18px;
+	padding: 10px 10px 5px 26px;
+	color: white;
+	margin: 60px auto 0;
+	line-height: 1.3;
+	width: 410px;
+	max-width: 100%;
+	position: relative;
+}
+#seminariste .left p.quote span:nth-child(3) {
+	font-size: 30px;
+}
+#seminariste .left p.quote span:nth-child(4) {
+	display: none;
+	font-size: 18px;
+}
+#seminariste .left p.signature {
+	font-size: 18px;
+	color: white;
+	line-height: 1.3;
+	margin: 10px auto 0;
+	font-weight: bold;
+	width: 363px;
+	max-width: 100%;
+}
+#seminariste .left p.signature span {
+	color: #CD8B00;
+}
+#seminariste .left p.quote img {
+	position: absolute;
+}
+#seminariste .left p.quote img.open {
+	left: 0;
+	top: 0;
+}
+#seminariste .left p.quote img.close {
+	right: 0;
+	bottom: 0;
+}
+
+#seminariste .left .bt-custom {
+	width: 400px;
+	margin: 80px auto 0;
+}
+#seminariste .left .bt-custom:hover {
+	background-color: #CD8B00;
+	color: white;
+}
+
+
+#calculette {
+	min-height: 1948px;
+	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-impots.jpg");
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	padding: 40px 10px 70px;
+
+}
+
+#calculette .title {
+	font-size: 35px;
+	color: white;
+	text-transform: uppercase;
+	margin-top: 40px;
+	margin-bottom: 30px;
+	line-height: 1.3;
+	padding-left: 20px;
+	border-left: 1px solid rgba(255,255,255,0.3);
+}
+#calculette .title span {
+	color: #CD8B00;
+	font-weight: bold;
+}
+
+#calculette .reduire-section, #calculette .calcul-section {
+	background-color: white;
+	padding: 25px;
+
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+}
+#calculette .reduire-section .left, #calculette .calcul-section .left {
+	text-align: left;
+	padding-top: 80px;
+}
+#calculette .reduire-section .left .subtitle,
+#calculette .calcul-section .left .subtitle {
+	color: #707070;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 8px;
+}
+
+
+.container-switch {
+	width: 85px;
+	margin: 0 auto;
+}
+.container-switch .switch {
+	position: relative;
+	display: inline-block;
+	width: 85px;
+	height: 40px;
+}
+
+.container-switch .switch p {
+	position: absolute;
+	top: 7px;
+	font-size: 25px;
+	font-weight: 700;
+	color: rgba(0,0,0,0.5);
+	margin: 0;
+	transition: .4s;
+	line-height: 1;
+}
+.container-switch .switch p:nth-child(3) {
+	color: rgba(205,139,0,1);
+	left: -35px;
+}
+.container-switch .switch p:nth-child(4) {
+	right: -35px;
+}
+
+.container-switch .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.container-switch .switch-slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(47,36,69,0.1);
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.container-switch .switch-slider:before {
+	position: absolute;
+	content: "";
+	height: 32px;
+	width: 32px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.container-switch input:checked + .switch-slider {
+}
+
+.container-switch input:checked + .switch-slider.round:before{
+	background-color: rgba(205,139,0,1);
+}
+
+.container-switch input:checked + .switch-slider:before {
+	-webkit-transform: translateX(45px);
+	-ms-transform: translateX(45px);
+	transform: translateX(45px);
+}
+.container-switch .switch-slider.round {
+	border-radius: 34px;
+}
+
+.container-switch .switch-slider.round:before {
+	background-color: #CD8B00;
+	border-radius: 50%;
+}
+
+#calculette .reduire-section .right,
+#calculette .calcul-section .right {
+	padding: 40px;
+	border-left: 1px solid rgba(112,112,112,0.1);
+}
+#calculette .reduire-section .right p {
+	font-size: 18px;
+	color: rgba(0,0,0,0.8);
+	text-transform: none;
+	line-height: 1.3;
+	margin: 5px 0 0;
+	min-height: 140px;
+}
+#calculette .reduire-section .right .bt-custom {
+	margin-top: 25px;
+}
+#calculette .reduire-section .right .section-title {
+	font-size: 25px;
+	color: #707070;
+	text-transform: uppercase;
+	margin: 0;
+}
+#calculette .reduire-section .right .section-title img {
+	max-width: 180px;
+	margin-bottom: 25px;
+}
+#calculette .reduire-section .right .section-title span {
+	font-weight: bold;
+	color: #CD8B00;
+}
+
+#calculette .calendrier-section {
 	text-align: center;
 }
-.btn-custom.yellow {
+#calculette .calendrier-section .container {
+	padding: 15px;
+	display: inline-block;
+	vertical-align: top;
+	background-color: white;
+	height: 270px;
+}
+#calculette .calendrier-section .container:nth-child(1) {
+	float: left;
+	width: 70%;
+}
+#calculette .calendrier-section .container:nth-child(2) {
+	float: right;
+	width: 28%;
+}
+#calculette .calendrier-section .absolute-title {
+	position: relative;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	height: 20px;
+	margin-bottom: 50px;
+}
+#calculette .calendrier-section .absolute-title p {
+	background-color: white;
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	color: #CD8B00;
+	text-transform: uppercase;
+	margin: 0;
+	font-size: 16px;
+	width: 104px;
+}
+#calculette .calendrier-section .box-date {
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+}
+#calculette .calendrier-section .box-date p {
+	font-family: 'Lato', serif;
+	font-weight: 700;
+	font-size: 14px;
 	color: black;
-	background-color: #FFC20E;
+	line-height: 1.3;
 }
-.btn-custom.purple {
-	color: white !important;
-	background-color: #2F2444;
+#calculette .calendrier-section .box-date .date {
+	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/icon-bg-mail.png");
+	background-size: cover;
+	width: 54px;
+	height: 58px;
+	margin: 0 auto;
+	padding-top: 15px;
+	margin-bottom: 20px;
+
+	font-family: 'Lato', serif;
+	font-weight: 900;
+	font-size: 20px;
+	color: #CD8B00;
+	line-height: 0.8;
+	text-transform: uppercase;
 }
-.btn-custom.red {
-	color: white !important;
-	background-color: #DF514D;
+#calculette .calendrier-section .box-date .date span {
+	font-size: 14px;
+}
+
+#calculette .calendrier-section .box-date:nth-child(3) {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+#calculette .calcul-section .right .row {
+	margin-bottom: 20px;
+}
+#calculette .calcul-section .right .container-input-title {
+	font-weight: bold;
+	color: black;
+	font-size: 18px;
+}
+#calculette .calcul-section .right .container-input-title-disabled {
+	color: #4D4D4D;
+	font-size: 18px;
+}
+#calculette .calcul-section .right .container-input label ,
+#calculette .calcul-section .right .container-input-disabled label {
+	display: inline-block;
+	vertical-align: top;
+	width: 85%;
+}
+#calculette .calcul-section .right .container-input input {
+	margin: 0;
+	box-shadow: none;
+	height: 28px;
+	border: none;
+	border-bottom: 1px solid black;
+}
+#calculette .calcul-section .right .container-input-disabled input {
+	margin: 0;
+	box-shadow: none;
+	height: 28px;
+	border: none;
+}
+#calculette .calcul-section .right .container-input-disabled  {
+	margin: 0;
+	box-shadow: none;
+	height: 28px;
+	border: none;
+}
+#calculette .calcul-section .right .container-input p,
+#calculette .calcul-section .right .container-input-disabled p{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	float: right;
+	line-height: 1;
+	font-size: 30px;
+	color: black;
+	font-weight: bold;
+}
+#calculette .calcul-section .right .container-input-disabled p {
+	font-weight: normal !important;
+}
+#bandeau-bleu {
+	padding-top: 30px;
+	padding-bottom: 20px;
+	background-color: #004999;
+}
+#bandeau-bleu .left {
+}
+#bandeau-bleu .left p {
+	font-size: 35px;
+	text-transform: uppercase;
+	line-height: 1.3;
+	color: white;
+	padding-left: 20px;
+	border-left: 1px solid rgba(255,255,255,0.3);
+	margin: 0 auto;
+}
+#bandeau-bleu .center {
+	padding-top: 10px;
+}
+#bandeau-bleu .center img {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+#bandeau-bleu .center p {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 18px;
+	color: white;
+	line-height: 1.2;
+	margin: 0;
+}
+#bandeau-bleu .center p span.big {
+	text-transform: uppercase;
+	color: #CD8B00;
+}
+#bandeau-bleu .center p span.bold {
+	font-weight: bold;
+}
+
+#bandeau-bleu .right {
+	padding-top: 15px;
+}
+#bandeau-bleu .right div {
+	margin-bottom: 8px;
+}
+#bandeau-bleu .right div img {
+	vertical-align: middle;
+	margin-right: 10px;
+}
+#bandeau-bleu .right div p {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	font-size: 18px;
+	line-height: 1;
+	font-weight: bold;
+	color: white;
+}
+
+
+#chiffres {
+	background-size: cover;
+	background-position: center;
+	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-end.jpg");
+	padding-top: 80px;
+	padding-bottom: 20px;
+	min-height: 700px;
+}
+#chiffres .title {
+	font-size: 35px !important;
+	text-transform: uppercase;
+	line-height: 1.3;
+	color: white;
+	padding-left: 20px;
+	border-left: 1px solid rgba(255,255,255,0.3);
+}
+#chiffres .title span {
+	color: #CD8B00;
+}
+#chiffres .left p {
+	font-size: 18px;
+	color: white;
+	line-height: 1.3;
+	padding-left: 20px;
+}
+
+
+#footer {
+	padding-bottom: 10px;
+}
+#footer .left {
+	padding-top: 20px;
+}
+#footer .left a {
+	display: inline-block;
+	font-size: 12px;
+	color: #CD8B00;
+	line-height: 1;
+}
+#footer .left a.border {
+	border-bottom: 1px solid rgba(112,112,112,0.1);
+	padding-bottom: 10px;
+	margin-bottom: 5px;
+}
+#footer .center {
+	padding-top: 20px;
+}
+#footer .right {
+	padding-top: 50px;
+	text-align: right;
+}
+#footer .right img {
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+	margin: 5px;
+}
+#footer .right img:hover {
+	transform: scale(1.05);
 }
 
 @media screen and (max-width: 1010px) {
-
+	#calculette {
+		padding: 40px;
+	}
+	#calculette .calendrier-section .box-date p {
+		font-size: 12px;
+	}
+	#calculette .calendrier-section .box-date:nth-child(3) {
+		margin: 0 40px 40px;
+	}
+	#footer .right {
+		padding-top: 10px;
+		text-align: center;
+	}
 
 }
 @media screen and (max-width: 640px) {
+	#header {
+		background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-header-small.jpg");
+		padding-top: 40vh;
+		padding-bottom: 60px;
+	}
+	#header h1 {
+		font-size: 24px;
+		padding-left: 10px;
+	}
+	#header .warning {
+		font-size: 13px;
+	}
+	#header .warning {
+		left: 5px;
+	}
+	#header .warning img {
+		max-width: 18px;
+		margin-right: 1px !important;
+	}
 
+	#crise .left {
+		border: none;
+		padding-left: 0;
+	}
+	#crise h2 {
+		font-size: 28px;
+		border-left: 1px solid rgba(112,112,122,0.3);
+		padding-left: 20px;
+	}
+	#crise p {
+		padding-left: 20px;
+	}
+
+
+	#seminariste .left h2 {
+		font-size: 28px;
+	}
+	#seminariste .left {
+		min-height: auto;
+		padding-top: 60px;
+	}
+	#seminariste .right {
+		min-height: 436px;
+	}
+	#seminariste .right img {
+		top: -20px;
+		left: calc(50% - 50px);
+	}
+
+	#calculette {
+		background-image: none;
+		background-color: white;
+		padding: 10px 10px 30px;
+	}
+	#calculette .reduire-section .left, #calculette .calcul-section .left {
+		padding-top: 0;
+	}
+	#calculette .reduire-section, #calculette .calcul-section {
+		padding: 0 !important;
+	}
+	#calculette .reduire-section .right, #calculette .calcul-section .right {
+		padding: 0 !important;
+		border: none !important;
+	}
+	#calculette .reduire-section .right .section-title {
+		width: 100%;
+		display: inline-block;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	#calculette .reduire-section .right .section-title img {
+		display: block;
+		margin: 0 auto;
+	}
+	#calculette .calendrier-section .box-date {
+		display: block;
+	}
+	#calculette .title {
+		color: #707070;
+		border-left: 1px solid rgba(112,112,112,0.3);
+		font-size: 28px;
+	}
+	#calculette .title br {
+		display: none;
+	}
+	#calculette .calendrier-section .container {
+		width: 100% !important;
+		margin-top: 20px;
+		height: auto !important;
+	}
+
+
+	#bandeau-bleu .center p {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	#chiffres {
+		background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-end-small.jpg");
+	}
+	#chiffres .left p.title {
+		font-size: 28px !important;
+	}
+	#chiffres .left p {
+		font-size: 18px !important;
+	}
+
+
+	#footer {
+		padding-top: 20px;
+	}
+	#footer .left a {
+		display: block;
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	#footer .left a.border {
+		border: none;
+	}
+	#footer .left div:first-child a {
+		border-top: 1px solid rgba(112,112,112,0.1);
+	}
+	#footer .left a.middle {
+		border-top: 1px solid rgba(112,112,112,0.1);
+		border-bottom: 1px solid rgba(112,112,112,0.1);
+	}
+	#footer .left div:last-child a {
+		border-bottom: 1px solid rgba(112,112,112,0.1);
+	}
 }
 
 
