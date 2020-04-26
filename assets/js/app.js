@@ -73,7 +73,7 @@ $(document).ready( function() {
 function handleNav() {
     var scroll = $(window).scrollTop();
 
-    if (scroll > 0 && $(window).width() > 640) {
+    if (scroll > 0) {
         $('#nav').addClass('fixed')
     }
     else {
@@ -93,7 +93,10 @@ function handleSwitch() {
             $('.display-type-info').eq(el).text('IR')
         })
         $('#btn-don-form').attr('href', 'https://soutenir.mavocation.org/')
-        $('#img-amount-deduction').attr('src', $(window).width() > 640 ? 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/66.png' : 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/66-small.png')
+        if ($(window).width() > 640)
+            $('#img-amount-deduction').attr('src', 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/66.png')
+        else
+            $('#img-amount-deduction-small').attr('src', 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/66-small.png')
         $('#text-deduction').text('Vous pouvez déduire de votre impôt sur le revenu 66% du montant de votre don, dans la limite de 20% de votre revenu imposable. Le surplus étant reportable 5 ans.')
 
         $('.switch p:nth-child(3)').css('color', 'rgba(0,0,0,0.5)')
@@ -107,7 +110,10 @@ function handleSwitch() {
         })
 
         $('#btn-don-form').attr('href', 'https://soutenir.fondationduclerge.com/?reserved_affectations=8026')
-        $('#img-amount-deduction').attr('src', $(window).width() > 640 ? 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/75.png' : 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/75-small.png')
+        if ($(window).width() > 640)
+            $('#img-amount-deduction').attr('src', 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/75.png')
+        else
+            $('#img-amount-deduction-small').attr('src', 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/75-small.png')
         $('#text-deduction').text('Grâce à un partenariat entre l’Œuvre des Vocations et la Fondation Nationale pour le Clergé, habilitée à recevoir des dons déductibles de l’IFI, vous pouvez faire un don à l’Œuvre des Vocations et déduire 75% de son montant de votre IFI dans la limite maximale de 50 000 € par an (soit un don de 66 667 €). Pour aider les futurs prêtres tout en réduisant le montant de votre IFI, vous pouvez faire dès aujourd’hui votre don IFI à l’Œuvre des Vocations.')
         $('.switch p:nth-child(3)').css('color', 'rgba(205,139,0,1)')
         $('.switch p:nth-child(4)').css('color', 'rgba(0,0,0,0.5)')

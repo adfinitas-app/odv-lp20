@@ -109,6 +109,20 @@ button, .bt-custom, .btn-don {
 	float: right;
 }
 
+#nav .don-small {
+	display: none;
+	float: right;
+}
+#nav .don-small p {
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0;
+}
+#nav .don-small img {
+	max-width: 43px;
+}
+
 #header {
 	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-header.jpg");
 	background-position: center;
@@ -695,6 +709,15 @@ button, .bt-custom, .btn-don {
 
 }
 @media screen and (max-width: 640px) {
+	#nav {
+		padding: 5px 5px 0;
+	}
+	#nav.fixed .right {
+		padding-top: 10px !important;
+	}
+	#nav.fixed .don-small {
+		display: block;
+	}
 	#header {
 		background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-header-small.jpg");
 		padding-top: 40vh;
