@@ -516,12 +516,19 @@ button, .bt-custom, .btn-don {
 	vertical-align: top;
 	width: 85%;
 }
-#calculette .calcul-section .right .container-input input {
+#calculette .calcul-section .right input {
 	margin: 0;
 	box-shadow: none;
 	height: 28px;
 	border: none;
 	border-bottom: 1px solid black;
+
+	font-size: 22px;
+	color: black;
+	font-weight: bold;
+}
+#calculette .calcul-section .right .container-input-disabled input:disabled {
+	background-color: transparent !important;
 }
 #calculette .calcul-section .right .container-input-disabled input {
 	margin: 0;

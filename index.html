@@ -22,19 +22,41 @@
 	<link rel='stylesheet' href='assets/css/remodal-default-theme.css' type='text/css'/>
 	<link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-38722129-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-38722129-1');
+	</script>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-W6JVT6C');</script>
+	<!-- End Google Tag Manager -->
+
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6JVT6C"
+				  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <nav>
 	<div class="row expanded" id="nav">
-		<a href="" class="logo" target="_blank">
+		<a href="https://www.mavocation.org/" class="logo" target="_blank">
 			<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/logo-white.png" alt="logo ODV" />
 		</a>
 		<div class="right hide-for-small-only">
-			<a class="btn-don" href="" target="_blank">
+			<a class="btn-don" href="https://soutenir.fondationduclerge.com/?reserved_affectations=8026" target="_blank">
 				<span>Je fais un don</span>
 				<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bt-ifi-2.png" alt="Je fais un don IFI" />
 			</a>
-			<a class="btn-don" href="" target="_blank">
+			<a class="btn-don" href="https://soutenir.mavocation.org/" target="_blank">
 				<span>Je fais un don</span>
 				<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bt-ir-2.png" alt="Je fais un don IR" />
 			</a>
@@ -50,11 +72,11 @@
 		<div class="row max-width">
 			<div class="small-12 columns">
 				<h1><span>Réduisez votre impôt en</span><br />protégeant la santé et l’avenir<br />des séminaristes</h1>
-				<a class="btn-don" href="" target="_blank">
+				<a class="btn-don show-for-small-only" href="https://soutenir.fondationduclerge.com/?reserved_affectations=8026" target="_blank">
 					<span>Je fais un don</span>
 					<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bt-ifi-2.png" alt="Je fais un don IFI" />
 				</a>
-				<a class="btn-don" href="" target="_blank">
+				<a class="btn-don show-for-small-only" href="https://soutenir.mavocation.org/" target="_blank">
 					<span>Je fais un don</span>
 					<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bt-ir-2.png" alt="Je fais un don IR" />
 				</a>
@@ -183,7 +205,7 @@
 							<p class="container-input-title">Montant de votre <span class="display-type-info">IFI</span></p>
 						</div>
 						<div class="small-12 large-6 end columns container-input">
-							<label><input type="text" /></label>
+							<label><input type="text" id="amount-impot" /></label>
 							<p>€</p>
 						</div>
 					</div>
@@ -192,7 +214,7 @@
 							<p class="container-input-title">Montant de mon don</p>
 						</div>
 						<div class="small-12 large-6 end columns container-input">
-							<label><input type="text" /></label>
+							<label><input type="text" id="amount-don-input" /></label>
 							<p>€</p>
 						</div>
 					</div>
@@ -201,7 +223,7 @@
 							<p class="container-input-title-disabled">Ma réduction d'impôt</p>
 						</div>
 						<div class="small-12 large-6 end columns container-input-disabled">
-							<label><input type="text" /></label>
+							<label><input type="text" id="deduction-don" value="" disabled /></label>
 							<p>€</p>
 						</div>
 					</div>
@@ -210,12 +232,12 @@
 							<p class="container-input-title-disabled">Montant de votre <span class="display-type-info">IFi</span><br />après ma réduction d’impôt</p>
 						</div>
 						<div class="small-12 large-6 end columns container-input-disabled">
-							<label><input type="text" /></label>
+							<label><input type="text" id="after-deduction-don" value="" disabled /></label>
 							<p>€</p>
 						</div>
 					</div>
-					<a class="bt-custom yellow">
-						Je fais un don de <span id="amount-don">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> €
+					<a class="bt-custom yellow" id="btn-don-form" href="https://soutenir.fondationduclerge.com/?reserved_affectations=8026" target="_blank">
+						Je fais un don de <span id="amount-btn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> €
 					</a>
 				</div>
 			</div>
@@ -237,15 +259,20 @@
 			</div>
 			<div class="small-12 medium-6 large-4 columns right">
 				<div>
-					<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/icon-tel.png" alt="" />
-					<p>01 78 91 93 20</p>
+					<a href="tel:0178919320">
+						<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/icon-tel.png" alt="" />
+						<p>01 78 91 93 20</p>
+					</a>
 				</div>
 				<div>
-					<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/icon-mail.png" alt="" />
-					<p> contact@oeuvredesvocations.org</p>
+					<a href="mailto:contact@oeuvredesvocations.org">
+						<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/icon-mail.png" alt="" />
+						<p> contact@oeuvredesvocations.org</p>
+					</a>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </section>
 
@@ -270,37 +297,37 @@
 	<div class="row expanded" id="footer">
 		<div class="row max-width">
 			<div class="small-12 text-center show-for-small-only">
-				<a href="" target="_blank">
+				<a href="https://www.mavocation.org/" target="_blank">
 					<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/logo-footer.png" alt="Logo ODV" />
 				</a>
 			</div>
 			<div class="small-12 medium-6 large-4 columns left">
 				<div>
-					<a class="border" href="" target="_blank">SITE INSTITUTIONNEL</a>
+					<a class="border" href="https://www.mavocation.org/" target="_blank">SITE INSTITUTIONNEL</a>
 				</div>
 				<div>
-					<a class="border middle" href="" target="_blank">MENTIONS LÉGALES</a>
+					<a class="border middle" href="https://www.mavocation.org/infos-legales.html" target="_blank">MENTIONS LÉGALES</a>
 				</div>
 				<div>
-					<a href="" target="_blank">CONTACT</a>
+					<a href="https://www.mavocation.org/contacter-le-webmestre.html" target="_blank">CONTACT</a>
 				</div>
 			</div>
 			<div class="small-12 medium-6 large-4 columns center text-center hide-for-small-only">
-				<a href="" target="_blank">
+				<a href="https://www.mavocation.org/" target="_blank">
 					<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/logo-footer.png" alt="Logo ODV" />
 				</a>
 			</div>
 			<div class="small-12 medium-12 large-4 columns right">
-				<a href="" target="_blank">
-					<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/share.png" alt="" />
+				<a href="https://soundcloud.com/mavocation" target="_blank">
+					<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/share.png" alt="Soundcloud ODV" />
 				</a>
-				<a href="" target="_blank">
+				<a href="https://www.youtube.com/channel/UCqXxG5rGB55xC7WrKo9HFNg" target="_blank">
 					<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/yt.png" alt="Youtube ODV" />
 				</a>
-				<a href="" target="_blank">
+				<a href="https://www.facebook.com/mavocation.org" target="_blank">
 					<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/fb.png" alt="Facebook ODV" />
 				</a>
-				<a href="" target="_blank">
+				<a href="https://twitter.com/OVocations" target="_blank">
 					<img src="https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/tw.png" alt="Twitter ODV" />
 				</a>
 			</div>

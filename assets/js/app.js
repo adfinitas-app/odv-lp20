@@ -22,6 +22,7 @@ $(document).ready( function() {
 
     $('.switch-input').click(function () {
         handleSwitch()
+        handleCalculette()
     })
 
     $('#bt-temoignage').click(function () {
@@ -29,6 +30,43 @@ $(document).ready( function() {
         $('#seminariste .left p.quote span:nth-child(4)').show()
         $('#seminariste .left p.quote span:nth-child(3)').hide()
     })
+
+    $('#amount-don-input, #amount-impot').on('keypress', function (event) {
+        var regex = new RegExp("^[0-9]+$");
+        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+        if (!regex.test(key)) {
+            event.preventDefault();
+            return false;
+        }
+    });
+
+    $('#amount-don-input').on('input', function() {
+        var input = $('#amount-don-input')
+        var value = input.val()
+
+        if (value.charAt(0) === '0')
+            input.val(value.substring(1, value.length))
+        if ($('#amount-don-input').val() === '')
+            $('#amount-don-input').val(0)
+
+        $('#amount-btn').text($('#amount-don-input').val())
+
+        if ($('#amount-impot').val() !== '' && $('#amount-don-input').val() !== '')
+            handleCalculette()
+    });
+
+    $('#amount-impot').on('input', function() {
+        var input = $('#amount-impot')
+        var value = input.val()
+
+        if (value.charAt(0) === '0')
+            input.val(value.substring(1, value.length))
+        if ($('#amount-impot').val() === '')
+            $('#amount-impot').val(0)
+
+        if ($('#amount-impot').val() !== '' && $('#amount-don-input').val() !== '')
+            handleCalculette()
+    });
 
 });
 
@@ -54,6 +92,7 @@ function handleSwitch() {
         $('.display-type-info').each(function (el) {
             $('.display-type-info').eq(el).text('IR')
         })
+        $('#btn-don-form').attr('href', 'https://soutenir.mavocation.org/')
         $('#img-amount-deduction').attr('src', $(window).width() > 640 ? 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/66.png' : 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/66-small.png')
         $('#text-deduction').text('Vous pouvez déduire de votre impôt sur le revenu 66% du montant de votre don, dans la limite de 20% de votre revenu imposable. Le surplus étant reportable 5 ans.')
 
@@ -67,6 +106,7 @@ function handleSwitch() {
             $('.display-type-info').eq(el).text('IFI')
         })
 
+        $('#btn-don-form').attr('href', 'https://soutenir.fondationduclerge.com/?reserved_affectations=8026')
         $('#img-amount-deduction').attr('src', $(window).width() > 640 ? 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/75.png' : 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/75-small.png')
         $('#text-deduction').text('Grâce à un partenariat entre l’Œuvre des Vocations et la Fondation Nationale pour le Clergé, habilitée à recevoir des dons déductibles de l’IFI, vous pouvez faire un don à l’Œuvre des Vocations et déduire 75% de son montant de votre IFI dans la limite maximale de 50 000 € par an (soit un don de 66 667 €). Pour aider les futurs prêtres tout en réduisant le montant de votre IFI, vous pouvez faire dès aujourd’hui votre don IFI à l’Œuvre des Vocations.')
         $('.switch p:nth-child(3)').css('color', 'rgba(205,139,0,1)')
@@ -75,10 +115,46 @@ function handleSwitch() {
     }
 }
 
-function 	scrollToNext(next){
-    $('#open-menu').show()
-    $('#menu-mobile').hide()
 
+function handleCalculette() {
+    var input = $('#amount-don-input')
+    var value = input.val().replace(' ', '')
+    input.val(value)
+
+    var inputImpot = $('#amount-impot')
+    var valueImpot = inputImpot.val().replace(' ', '')
+    inputImpot.val(valueImpot)
+
+    var valueDeduction
+    var valueAfterImpot
+    var jalon
+
+    if (toggle) { // IFI
+        jalon = 50000
+        valueDeduction = value * 0.75
+
+        if (valueDeduction > jalon)
+            valueDeduction = jalon
+
+    }
+    else { // IR
+        jalon = 736
+        valueDeduction = value * 0.75
+
+        if (value > jalon)
+            valueDeduction = 552 + ((value - 736) * 0.66)
+        else
+            valueDeduction = value * 0.75
+
+    }
+
+    valueAfterImpot = valueImpot - valueDeduction
+
+    $('#deduction-don').val(valueDeduction % 1 === 0 ? valueDeduction : valueDeduction.toFixed(2))
+    $('#after-deduction-don').val(valueAfterImpot % 1 === 0 ? valueAfterImpot : valueAfterImpot.toFixed(2))
+}
+
+function 	scrollTo(next){
     $('html, body').stop().animate({
         scrollTop: $(window).width() > 640 ? $(next).offset().top - 44 : $(next).offset().top - 0
     }, 700, 'swing');
