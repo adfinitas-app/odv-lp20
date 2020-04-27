@@ -30,10 +30,10 @@ button, .bt-custom, .btn-don {
 .btn-don {
 	background-color: #EBB33C;
 	height: 43px;
+	line-height: 43px;
 	display: inline-block;
 	border-radius: 23px;
 	margin: 10px;
-	padding-top: 4px;
 }
 .btn-don:hover {
 	transform: scale(1.02);
@@ -60,7 +60,7 @@ button, .bt-custom, .btn-don {
 	text-align: center;
 	max-width: 100%;
 	height: 43px;
-	padding-top: 8px;
+	line-height: 43px;
 }
 .bt-custom.yellow {
 	color: white;
