@@ -28,11 +28,7 @@ button, .bt-custom, .btn-don {
 	color: #DF514D !important;
 }
 .btn-don {
-	background-color: #EBB33C;
-	height: 43px;
-	line-height: 43px;
 	display: inline-block;
-	border-radius: 23px;
 	margin: 10px;
 }
 .btn-don:hover {
