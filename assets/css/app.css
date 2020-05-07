@@ -736,6 +736,7 @@ button, .bt-custom, .btn-don {
 	#header h1 {
 		font-size: 24px;
 		padding-left: 10px;
+		padding-bottom: 15px;
 	}
 	#header .warning {
 		font-size: 13px;
