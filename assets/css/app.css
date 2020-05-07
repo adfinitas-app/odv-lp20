@@ -69,15 +69,14 @@ button, .bt-custom, .btn-don {
 	top: 0;
 	z-index: 99;
 
-	padding-left: 20px;
+	padding-left: 0;
 	padding-right: 20px;
 }
 #nav.fixed {
 	position: fixed;
-	background-color: rgba(0,0,0,0.5);
+	/*background-color: rgba(0,0,0,0.5);*/
 }
 #nav.fixed .logo {
-	width: 100px;
 }
 
 #nav .logo {
@@ -86,6 +85,8 @@ button, .bt-custom, .btn-don {
 	-o-transition: width .1s ease-in-out;
 	-ms-transition: width .1s ease-in-out;
 	float: left;
+	width: 209px;
+	max-width: 100%;
 }
 #nav .right {
 	float: right;
@@ -645,6 +646,11 @@ button, .bt-custom, .btn-don {
 	padding-left: 20px;
 }
 
+#chiffres .right img {
+	width: 430px;
+	max-width: 100%;
+}
+
 
 #footer {
 	padding-bottom: 10px;
@@ -699,10 +705,25 @@ button, .bt-custom, .btn-don {
 }
 @media screen and (max-width: 640px) {
 	#nav {
-		padding: 5px 5px 0;
+		padding: 0 5px 0 0;
+	}
+	#nav .logo {
+		width: 160px;
+	}
+	#nav.fixed {
+		background-color: rgba(0,0,0,0.5);
+		padding-bottom: 10px;
 	}
 	#nav.fixed .right {
 		padding-top: 10px !important;
+	}
+	#nav.fixed .logo {
+		width: 80px !important;
+		padding-left: 5px;
+		padding-top: 10px;
+	}
+	#nav.fixed .logo img {
+		content: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/logo-white-fixed.png");
 	}
 	#nav.fixed .don-small {
 		display: block;
@@ -805,13 +826,16 @@ button, .bt-custom, .btn-don {
 	}
 
 	#chiffres {
+		padding-top: 40px;
 		background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-end-small.jpg");
 	}
 	#chiffres .left p.title {
 		font-size: 28px !important;
+		padding-left: 20px !important;
 	}
 	#chiffres .left p {
 		font-size: 18px !important;
+		padding: 0;
 	}
 
 
