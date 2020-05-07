@@ -118,7 +118,10 @@ button, .bt-custom, .btn-don {
 	background-position: center;
 	padding-top: 55vh;
 }
-
+#header .accroche {
+	display: block;
+	margin: 0 auto;
+}
 #header .warning {
 	position: absolute;
 	bottom: 20px;
@@ -729,6 +732,10 @@ button, .bt-custom, .btn-don {
 		background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-header-small.jpg");
 		padding-top: 40vh;
 		padding-bottom: 60px;
+	}
+	#header .accroche {
+		margin-bottom: 15px;
+		content: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/accroche-small.png");
 	}
 	#header h1 {
 		font-size: 24px;
