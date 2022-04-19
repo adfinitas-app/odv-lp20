@@ -114,12 +114,18 @@ button, .bt-custom, .btn-don {
 }
 
 #header {
-	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-header.jpg");
+	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/2022/bg-header.jpg");
 	background-position: center;
-	padding-top: 55vh;
+	padding-top: 100px;
+	position: relative;
 }
 #header .accroche {
 	display: block;
+	position: absolute;
+	bottom: 10%;
+	left: 10%;
+	max-width: 100%;
+	width: 700px;
 	margin: 0 auto;
 }
 #header .warning {
@@ -163,12 +169,49 @@ button, .bt-custom, .btn-don {
 	padding-left: 20px;
 }
 #crise h2 {
-	font-size: 38px;
+	font-size: 32px;
 	color: black;
 	line-height: 1.2;
 	text-transform: uppercase;
 	margin: 0 0 15px;
 }
+#crise .end-row {
+	text-align: center;
+	margin-top: 50px;
+}
+#crise .end-row p {
+	text-align: left;
+	display: inline-block;
+	border-left: 1px solid #1C4894;
+	padding-left: 20px;
+	font-size: 24px;
+	color: black;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+#crise .end-row p span {
+	color: #004999;
+	font-weight: bold;
+}
+#crise .second {
+	margin-top: 50px;
+}
+#crise .second .photo {
+	text-align: center;
+}
+#crise .second .photo img {
+	max-width: 100%;
+	width: 500px;
+}
+#crise .second .text-right {}
+#crise .second .text-right p {
+	color: black;
+	font-size: 20px;
+	line-height: 1.1;
+	text-align: left;
+}
+#crise .second .text-right {}
+#crise .second {}
 #crise h2  span {
 	color: #004999;
 }
@@ -195,7 +238,7 @@ button, .bt-custom, .btn-don {
 	top: calc(50% - 50px);
 }
 #seminariste .right {
-	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-quote.jpg");
+	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/2022/bg-quote.jpg");
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -207,14 +250,14 @@ button, .bt-custom, .btn-don {
 	padding-bottom: 40px;
 }
 #seminariste .left .border {
-	width: 350px;
+	width: 75%;
+	margin-left: 20%;
 	max-width: 100%;
 	border-left: 1px solid rgba(255,255,255,0.3);
 	padding-left: 20px;
-	margin: 0 auto;
 }
 #seminariste .left h2 {
-	font-size: 38px;
+	font-size: 32px;
 	color: white;
 	line-height: 1.2;
 	text-transform: uppercase;
@@ -258,11 +301,13 @@ button, .bt-custom, .btn-don {
 }
 #seminariste .left p.quote img.open {
 	left: 0;
-	top: 0;
+	top: -30px;
+	width: 30px;
 }
 #seminariste .left p.quote img.close {
+	width: 30px;
 	right: 0;
-	bottom: 0;
+	bottom: -30px;
 }
 
 #seminariste .left .bt-custom {
@@ -277,9 +322,9 @@ button, .bt-custom, .btn-don {
 
 #calculette {
 	min-height: 1948px;
-	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-impots.jpg");
+	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/2022/bg-impots.jpg");
 	background-size: cover;
-	background-position: center;
+	background-position: 50% 25%;
 	position: relative;
 	padding: 40px 10px 70px;
 
@@ -585,6 +630,7 @@ button, .bt-custom, .btn-don {
 #bandeau-bleu .center img {
 	vertical-align: middle;
 	margin-right: 5px;
+	width: 73px;
 }
 #bandeau-bleu .center p {
 	display: inline-block;
@@ -626,7 +672,7 @@ button, .bt-custom, .btn-don {
 #chiffres {
 	background-size: cover;
 	background-position: center;
-	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-end.jpg");
+	background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/2022/bg-end.jpg");
 	padding-top: 80px;
 	padding-bottom: 20px;
 	min-height: 700px;
@@ -652,6 +698,7 @@ button, .bt-custom, .btn-don {
 #chiffres .right img {
 	width: 430px;
 	max-width: 100%;
+	margin-top: 50px;
 }
 
 
@@ -671,6 +718,12 @@ button, .bt-custom, .btn-don {
 	border-bottom: 1px solid rgba(112,112,112,0.1);
 	padding-bottom: 10px;
 	margin-bottom: 5px;
+}
+#footer .left p.credits {
+	font-size: 10px;
+	color: #797979;
+	line-height: 1;
+	margin-top: 20px;
 }
 #footer .center {
 	padding-top: 20px;
@@ -729,13 +782,21 @@ button, .bt-custom, .btn-don {
 		display: block;
 	}
 	#header {
-		background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-header-small.jpg");
+		background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/2022/bg-header-small.jpg");
 		padding-top: 40vh;
 		padding-bottom: 60px;
 	}
 	#header .accroche {
 		margin-bottom: 15px;
-		content: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/accroche-small.png");
+		position: static;
+		content: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/2022/accroche-small.png");
+	}
+	#header .btn-don {
+		display: block;
+	}
+	#header .btn-don img {
+		display: block;
+		margin: 0 auto;
 	}
 	#header h1 {
 		font-size: 24px;
@@ -753,16 +814,9 @@ button, .bt-custom, .btn-don {
 		margin-right: 1px !important;
 	}
 
-	#crise .left {
-		border: none;
-		padding-left: 0;
-	}
 	#crise h2 {
 		font-size: 28px;
 		border-left: 1px solid rgba(112,112,122,0.3);
-		padding-left: 20px;
-	}
-	#crise p {
 		padding-left: 20px;
 	}
 
@@ -824,7 +878,16 @@ button, .bt-custom, .btn-don {
 		height: auto !important;
 	}
 
-
+	#crise .second .text-right p {
+		margin-top: 20px;
+	}
+	#seminariste .left .border {
+		margin-left: 0;
+		width: 100%;
+	}
+	#seminariste .right {
+		max-height: 450px;
+	}
 	#bandeau-bleu .center p {
 		margin-top: 20px;
 		margin-bottom: 20px;
@@ -832,7 +895,7 @@ button, .bt-custom, .btn-don {
 
 	#chiffres {
 		padding-top: 40px;
-		background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/bg-end-small.jpg");
+		background-image: url("https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/2022/bg-end-small.jpg");
 	}
 	#chiffres .left p.title {
 		font-size: 28px !important;
