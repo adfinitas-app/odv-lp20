@@ -29,6 +29,7 @@ $(document).ready( function() {
     $('#bt-temoignage').click(function () {
         $(this).hide()
         $('#seminariste .left p.quote span:nth-child(4)').show()
+        if ($(window).width() < 640) $('#seminariste .left').css('min-height', '825px')
         $('#seminariste .left p.quote span:nth-child(3)').hide()
     })
 
