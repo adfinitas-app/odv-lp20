@@ -172,7 +172,7 @@ function handleCalculette() {
         $('#after-deduction-don').val(valueAfterImpot % 1 === 0 ? valueAfterImpot : valueAfterImpot.toFixed(2))
 
 
-    !toggle ? $('#btn-don-form').attr('href', 'https://soutenir.mavocation.org/soutenir-3/fill?engagement=don_simple' + '?montant=' + value) : $('#btn-don-form').attr('href', 'https://soutenir.fondationduclerge.com/?reserved_affectations=8026' + '&amount=' + value + '00');
+    !toggle ? $('#btn-don-form').attr('href', 'https://soutenir.mavocation.org/soutenir-3/fill?engagement=don_simple' + '&montant=' + value) : $('#btn-don-form').attr('href', 'https://soutenir.fondationduclerge.com/?reserved_affectations=8026' + '&amount=' + value + '00');
 
 }
 
