@@ -99,7 +99,7 @@ function handleSwitch() {
             $('.display-type-info').eq(el).text('IR')
         })
         $('.link-don').each(function (el) {
-            $('.link-don').eq(el).attr('href', 'https://soutenir.mavocation.org/formulaire-don-1')
+            $('.link-don').eq(el).attr('href', 'https://soutenir.mavocation.org/soutenir-3/fill?engagement=don_simple&montant=120')
         })
         if ($(window).width() > 640)
             $('#img-amount-deduction').attr('src', 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/66.png')
@@ -172,7 +172,7 @@ function handleCalculette() {
         $('#after-deduction-don').val(valueAfterImpot % 1 === 0 ? valueAfterImpot : valueAfterImpot.toFixed(2))
 
 
-    !toggle ? $('#btn-don-form').attr('href', 'https://soutenir.mavocation.org/formulaire-don-1' + '?amount=' + value + '00') : $('#btn-don-form').attr('href', 'https://soutenir.fondationduclerge.com/?reserved_affectations=8026' + '&amount=' + value + '00');
+    !toggle ? $('#btn-don-form').attr('href', 'https://soutenir.mavocation.org/soutenir-3/fill?engagement=don_simple' + '?montant=' + value) : $('#btn-don-form').attr('href', 'https://soutenir.fondationduclerge.com/?reserved_affectations=8026' + '&amount=' + value + '00');
 
 }
 

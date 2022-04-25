@@ -119,14 +119,18 @@ button, .bt-custom, .btn-don {
 	padding-top: 100px;
 	position: relative;
 }
+#header .accroche-container {
+	position: relative;
+	min-height: 100vh;
+}
 #header .accroche {
 	display: block;
 	position: absolute;
 	bottom: 10%;
-	left: 10%;
+	left: 0;
 	max-width: 100%;
 	width: 700px;
-	margin: 0 auto;
+	margin: 0 auto 0 .9375rem;
 }
 #header .warning {
 	position: absolute;
@@ -778,9 +782,26 @@ button, .bt-custom, .btn-don {
 		padding-top: 10px;
 		text-align: center;
 	}
+	#header .accroche-container {
+		min-height: 90vh;
+	}
 
 }
 @media screen and (max-width: 640px) {
+	#header .accroche-container {
+		min-height: auto;
+		height: 100%;
+	}
+	#header .accroche {
+		margin-left: 0;
+		padding-left: 0.625rem;
+	}
+	#header .accroche-container {
+		width: 100%;
+	}
+	#seminariste .right {
+		background-position: 50% 0;
+	}
 	#nav {
 		padding: 0 5px 0 0;
 	}
