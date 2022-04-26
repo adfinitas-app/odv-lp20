@@ -102,10 +102,10 @@ function handleSwitch() {
             $('.link-don').eq(el).attr('href', 'https://soutenir.mavocation.org/soutenir-3/fill?engagement=don_simple&montant=120')
         })
         if ($(window).width() > 640)
-            $('#img-amount-deduction').attr('src', 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/66.png')
+            $('#img-amount-deduction').attr('src', 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/75.png')
         else
-            $('#img-amount-deduction-small').attr('src', 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/66-small.png')
-        $('#text-deduction').text('Vous pouvez déduire de votre impôt sur le revenu 66% du montant de votre don, dans la limite de 20% de votre revenu imposable. Le surplus étant reportable 5 ans.')
+            $('#img-amount-deduction-small').attr('src', 'https://adfinitas-statics-cdn.s3.eu-west-3.amazonaws.com/ODV/odv-lp20/75-small.png')
+        $('#text-deduction').text('Vous pouvez déduire de votre impôt sur le revenu 75% dans la limite de 562€, puis 66% du montant de votre don au-delà de 562€, dans la limite de 20% de votre revenu imposable. Le surplus étant reportable 5 ans.')
 
         $('.switch p:nth-child(3)').css('color', 'rgba(0,0,0,0.5)')
         $('.switch p:nth-child(4)').css('color', 'rgba(205,139,0,1)')
@@ -155,25 +155,30 @@ function handleCalculette() {
 
     }
     else { // IR
-        jalon = 736
-        valueDeduction = value * 0.66
+        jalon = 562
+        valueDeduction = value * 0.75
 
-        if (value > jalon)
-            valueDeduction = 552 + ((value - 736) * 0.66)
-
+        if (value > jalon) {
+            valueDeduction = value * 0.66
+            if (valueDeduction > valueImpot * 0.20)
+                valueDeduction = valueImpot * 0.20
+        }
     }
 
     valueAfterImpot = valueImpot - valueDeduction
 
     $('#deduction-don').val(valueDeduction % 1 === 0 ? valueDeduction : valueDeduction.toFixed(2))
+
     if (valueAfterImpot < 0)
         $('#after-deduction-don').val(0)
     else
         $('#after-deduction-don').val(valueAfterImpot % 1 === 0 ? valueAfterImpot : valueAfterImpot.toFixed(2))
 
-
-    !toggle ? $('#btn-don-form').attr('href', 'https://soutenir.mavocation.org/soutenir-3/fill?engagement=don_simple' + '&montant=' + value) : $('#btn-don-form').attr('href', 'https://soutenir.fondationduclerge.com/?reserved_affectations=8026' + '&amount=' + value + '00');
-
+    if (toggle) { // IFI
+        $('#btn-don-form').attr('href', 'https://soutenir.fondationduclerge.com/?reserved_affectations=8026' + '&amount=' + value + '00');
+    } else { // IR
+        $('#btn-don-form').attr('href', 'https://soutenir.mavocation.org/soutenir-3/fill?engagement=don_simple' + '&montant=' + value)
+    }
 }
 
 function 	scrollTo(next){
