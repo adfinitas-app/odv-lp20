@@ -156,12 +156,11 @@ function handleCalculette() {
     }
     else { // IR
         jalon = 562
-        valueDeduction = value * 0.75
 
         if (value > jalon) {
-            valueDeduction = value * 0.66
-            if (valueDeduction > valueImpot * 0.20)
-                valueDeduction = valueImpot * 0.20
+            valueDeduction = (jalon * 0.75) + ((value - jalon) * 0.66)
+        } else {
+            valueDeduction = value * 0.75
         }
     }
 
