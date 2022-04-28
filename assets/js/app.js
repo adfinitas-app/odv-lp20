@@ -162,6 +162,9 @@ function handleCalculette() {
         } else {
             valueDeduction = value * 0.75
         }
+
+        if (valueDeduction > (valueImpot * 0.20))
+            valueDeduction = valueImpot * 0.20
     }
 
     valueAfterImpot = valueImpot - valueDeduction
